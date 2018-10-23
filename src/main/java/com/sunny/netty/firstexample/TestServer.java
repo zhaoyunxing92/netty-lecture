@@ -1,18 +1,17 @@
 /**
  * Copyright(C) 2018 Hangzhou zhaoyunxing Technology Co., Ltd. All rights reserved.
  */
-package com.sunny.netty;
+package com.sunny.netty.firstexample;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.sctp.nio.NioSctpServerChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * @author zhaoyunxing
- * @class: com.sunny.netty.TestServer
+ * @class: TestServer
  * @date: 2018-10-19 01:50
  * @des:
  */

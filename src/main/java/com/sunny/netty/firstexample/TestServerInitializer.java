@@ -1,7 +1,7 @@
 /**
  * Copyright(C) 2018 Hangzhou zhaoyunxing92 Technology Co., Ltd. All rights reserved.
  */
-package com.sunny.netty;
+package com.sunny.netty.firstexample;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -11,7 +11,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
 
 /**
  * @author zhaoyunxing92
- * @class: com.sunny.netty.TestServerInitializer
+ * @class: TestServerInitializer
  * @date: 2018-10-19 19:03
  * @des:
  */

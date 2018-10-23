@@ -1,7 +1,7 @@
 /**
  * Copyright(C) 2018 Hangzhou zhaoyunxing92 Technology Co., Ltd. All rights reserved.
  */
-package com.sunny.netty;
+package com.sunny.netty.firstexample;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -14,7 +14,7 @@ import java.net.URI;
 
 /**
  * @author zhaoyunxing92
- * @class: com.sunny.netty.TestHttpServerHandler
+ * @class: TestHttpServerHandler
  * @date: 2018-10-19 19:08
  * @des:
  */
@@ -22,6 +22,8 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+
+        System.out.println("客户端请求地址：" + ctx.channel().remoteAddress());
         if (msg instanceof HttpRequest) {
             HttpRequest httpRequest = (HttpRequest) msg;
             System.out.println("请求方法名：" + httpRequest.method().name());
@@ -39,6 +41,7 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
             response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/plain");
             //输出
             ctx.writeAndFlush(response);
+            //            ctx.channel().close();
         }
     }
 
