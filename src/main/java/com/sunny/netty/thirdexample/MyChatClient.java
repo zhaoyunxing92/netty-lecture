@@ -1,0 +1,36 @@
+/**
+ * Copyright(C) 2018 Hangzhou zhaoyunxing92 Technology Co., Ltd. All rights reserved.
+ */
+package com.sunny.netty.thirdexample;
+
+import com.sunny.netty.secondexample.MyClientInitializer;
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioSocketChannel;
+
+/**
+ * @author zhaoyunxing92
+ * @class: com.sunny.netty.thirdexample.MyChatClient
+ * @date: 2018-10-23 17:42
+ * @des:
+ */
+public class MyChatClient {
+    public static void main(String[] args) throws InterruptedException {
+        EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+
+        try {
+            Bootstrap bootstrap = new Bootstrap();
+            bootstrap.group(eventLoopGroup)
+                    .channel(NioSocketChannel.class)
+                    .handler(new MyChatClientInitializer());
+
+            ChannelFuture channelFuture = bootstrap.connect("localhost", 8899).sync();
+            channelFuture.channel().closeFuture().sync();
+        } finally {
+            eventLoopGroup.shutdownGracefully();
+        }
+
+    }
+}
