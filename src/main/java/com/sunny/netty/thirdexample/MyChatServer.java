@@ -3,7 +3,6 @@
  */
 package com.sunny.netty.thirdexample;
 
-import com.sunny.netty.firstexample.TestServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
