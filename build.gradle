@@ -16,3 +16,7 @@ dependencies {
     // https://mvnrepository.com/artifact/io.netty/netty-all
     compile group: 'io.netty', name: 'netty-all', version: '4.1.10.Final'
 }
+// 中文乱码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
